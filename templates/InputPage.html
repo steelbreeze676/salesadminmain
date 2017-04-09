@@ -1,0 +1,167 @@
+
+{% extends "layouts/layout1.html" %}
+
+{% block title %}BidBook Log Entry{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="form-group">
+    <form>
+          <label for="pwd">Project Name:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter Name">
+        </form>
+  </div>
+</div>
+<div class="container">
+  <div class="form-group">
+              <label for="datetimepicker">Bid Date & Time:</label>
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+              <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<p class="checkboxes">
+  <form method="post">
+  <div class="form-group">
+  <div class="row">
+    <div class="col-sm-3">
+    <label>Contractor</label>
+</div>
+</div>
+
+
+<div class="form-group">
+<div class='col-sm-3'>
+      
+      <fieldset>
+
+          <input name="contractorsRfq" value="ams" type="checkbox">AMS Electric <br>
+          <input name="contractorsRfq" value="bass" type="checkbox">Bass Electric<br>
+          <input name="contractorsRfq" value="best" type="checkbox">Best Electric<br>
+          <input name="contractorsRfq" value="blocka" type="checkbox">Blocka Construction<br>
+          <input name="contractorsRfq" value="brayer" type="checkbox">Brayer Electric <br>
+          <input name="contractorsRfq" value="contracosta" type="checkbox">Contra Costa Electric <br>
+          <input name="contractorsRfq" value="collins" type="checkbox">Collins Electric<br>
+          <input name="contractorsRfq" value="cupertino" type="checkbox">Cupertino Electric <br>
+          <input name="contractorsRfq" value="fisk" type="checkbox">Fisk Electric<br>   
+         <input name="contractorsRfq" value="collins" type="checkbox">Collins Electric<br>
+      </fieldset>
+</div>
+<div class='col-sm-3'>
+      <fieldset>
+ 
+          <input name="contractorsRfq" value="cupertino" type="checkbox">Cupertino Electric <br>
+          <input name="contractorsRfq" value="fisk" type="checkbox">Fisk Electric<br>
+          <input name="contractorsRfq" value="mcmillan" type="checkbox">McMillan Electric <br>
+          <input name="contractorsRfq" value="habowen" type="checkbox">H A Bowen Electric<br>
+          <input name="contractorsRfq" value="markIII" type="checkbox">Mark III Construction<br>
+          <input name="contractorsRfq" value="morrow" type="checkbox">Morrow Meadows<br>
+          <input name="contractorsRfq" value="redwood" type="checkbox">Redwood Electric <br>  
+          <input name="contractorsRfq" value="rosendin" type="checkbox">Rosendin Electric <br>
+          <input name="contractorsRfq" value="sasco" type="checkbox">SASCO <br>
+          <input name="contractorsRfq" value="scott" type="checkbox">Scott Electric<br>
+        
+      </fieldset>
+</div>
+<div class='col-sm-3'>
+    <fieldset>
+          <input name="contractorsRfq" value="shell" type="checkbox">Shell<br>
+          <input name="contractorsRfq" value="shimmick" type="checkbox">Shimmick Construction<br>
+          <input name="contractorsRfq" value="sprig" type="checkbox">Sprig Electric<br>
+          <input name="contractorsRfq" value="stfrancis" type="checkbox">St. Francis Electric <br>
+          <input name="contractorsRfq" value="twinkle" type="checkbox">Twinkle Corp<br>
+          <input name="contractorsRfq" value="wbradley" type="checkbox">W Bradley Electric<br>
+          <input name="contractorsRfq" value="watts" type="checkbox">Watts Construction<br>
+          <input name="contractorsRfq" value="young" type="checkbox">Young Electric<br>
+          <input name="contractorsRfq" value="other" type="checkbox">Other<br>
+          <input id="projectName" type="text">
+      </fieldset>
+    </div>
+    </form>
+  </div>
+</div>
+</div>
+
+</p>
+</div>
+
+<div class="container">
+<div class="form-group">
+  <form>
+<label>Cross-sell opportunity</label>
+<label class="checkbox-inline"><input type="checkbox" value="">Lighting</label>
+<label class="checkbox-inline"><input type="checkbox" value="">Commodities</label>
+<label class="checkbox-inline"><input type="checkbox" value="">Automation</label>
+<label class="checkbox-inline"><input type="checkbox" value="">Solar</label>
+<label class="checkbox-inline"><input type="checkbox" value="">PowerIQ</label>
+</form>
+</div>
+</div>
+
+<div class="container">
+<div class="form-group">
+  <form>
+
+  <label for="sel1">Estimated Value of Opportunity:</label>
+  <select class="form-control" id="sel1">
+
+                <option value="small">$0 - $50,000
+                </option><option selected="selected" value="medium">$50,000-$150,000
+                </option><option value="mediumLarge">$150,000-$250,000
+                </option><option value="large">$250,000-$1MM
+                </option><option value="veryLarge">$1MM and over
+              </option></select>
+            </form>
+</div>
+</div>
+</form>
+
+
+<div class="container">
+<div class="form-group">
+  <form>
+
+<label class="checkbox-inline"><input type="checkbox" value="">Special/Complex Project</label>
+</form>
+</div>
+</div>    
+
+<div class="container">
+  <div class="form-group">
+    <form>
+ <div class="form-group">
+  <label for="comment">Comments:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+
+    </form>
+    </div>
+  </div>
+<div class="container">
+  <div class="form-group">
+    <form>
+       <button type="button" class="btn btn-primary btn-block">Submit RFQ</button>
+</form>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
