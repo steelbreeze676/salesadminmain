@@ -45,6 +45,13 @@
 </div>
 
 
+<ul id="contractors">
+{%  for item in contractors %}
+    <li>"{{ contractors.Contname }}"</li>
+{% endfor %}
+</ul>
+
+
 <div class="form-group">
 <div class='col-sm-3'>
       <fieldset>
@@ -122,10 +129,10 @@
                 </option><option value="large">$250,000-$1MM
                 </option><option value="veryLarge">$1MM and over
               </option></select>
-            </form>
+  </form>
 </div>
 </div>
-</form>
+
 <div class="container">
 <div class="form-group">
   <form>
@@ -153,8 +160,4 @@
     </div>
   </div>
 
-</div>
-</div>
-</div>
-</div>
 {% endblock %}
