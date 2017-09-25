@@ -1,0 +1,66 @@
+
+{% extends "layouts/layout1.html" %}
+
+{% block title %}BidBook Log Entry{% endblock %}
+{% block content %}
+
+    <form method="post" action="{{ url_for('rfq_post') }}">
+
+        <div class="container">
+            <label for="name">Project Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+        </div>
+
+        <div class="container">
+            <label for="name">Bid Date:</label>
+            <input type='text' class="form-control" id='biddate' name='biddate' />
+        </div>
+
+        <div class="container">
+            <label for="contractors">Contractors</label>
+            <fieldset>
+                {%  for item in contractors %}
+                    <input name="contractors" value="{{ item.id }}" type="checkbox">{{ item.name }}<br>
+                {% endfor %}
+            </fieldset>
+        </div>
+
+        <div class="container">
+            <label for="name">Cross-sell opportunity</label>
+            <label class="checkbox-inline"><input name="crosell" type="checkbox" value="Lighting">Lighting</label>
+            <label class="checkbox-inline"><input name="crosell" type="checkbox" value="Commodities">Commodities</label>
+            <label class="checkbox-inline"><input name="crosell" type="checkbox" value="Automation">Automation</label>
+            <label class="checkbox-inline"><input name="crosell" type="checkbox" value="Solar">Solar</label>
+            <label class="checkbox-inline"><input name="crosell" type="checkbox" value="PowerIQ">PowerIQ</label>
+        </div>
+
+        <div class="container">
+            <label for="sel1">Estimated Value of Opportunity:</label>
+            <select class="form-control" id="appval" name="appval">
+                <option value="small">$0 - $50,000</option>
+                <option selected="selected" value="medium">$50,000-$150,000</option>
+                <option value="mediumLarge">$150,000-$250,000</option>
+                <option value="large">$250,000-$1MM</option>
+                <option value="veryLarge">$1MM and over</option>
+            </select>
+        </div>
+
+
+        <div class="container">
+            <label class="checkbox-inline"><input type="checkbox" name="specproj" value="Yes">Special/Complex Project</label>
+        </div>
+
+        <div class="container">
+            <label for="comments">Comments:</label>
+            <textarea class="form-control" rows="5" id="comments" name="comments"></textarea>
+        </div>
+
+        <input type="hidden" name="uid" value="{{ current_user.id }}" />
+
+        <div class="container">
+            <input type="submit" name="submit-rfq" class="btn btn-primary btn-block">Submit RFQ</input>
+        </div>
+
+    </form>
+
+{% endblock %}

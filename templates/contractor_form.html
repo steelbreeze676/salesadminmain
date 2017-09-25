@@ -1,0 +1,20 @@
+
+{% extends "layouts/layout1.html" %}
+
+{% block title %}Contractor Form{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <h2>Add Contractor</h2>
+        <form method="post" action="{{ url_for('contractor_post') }}">
+            <label>Name:</label>
+            <input id="name" name="name" type="text" />
+            <label>Email:</label>
+            <input id="email" name="email" type="text" />
+            <input id="submit" name="submit-add" type="submit" />
+        </form>
+    </div>
+
+{% endblock %}

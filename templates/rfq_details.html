@@ -1,0 +1,57 @@
+
+{% extends "layouts/layout1.html" %}
+
+{% block title %}BidBook Log Entry{% endblock %}
+{% block content %}
+
+        <div class="container">
+            <label for="name">Project Name:</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ bidrecord.name }}" disabled>
+        </div>
+
+        <div class="container">
+            <label for="comments">Submitted By:</label>
+            <p>{{ user.email }}</p>
+        </div>
+
+        <div class="container">
+            <label for="name">Bid Date:</label>
+            <input type='text' class="form-control" id='biddate' name='biddate' value="{{ bidrecord.biddate }}" disabled/>
+        </div>
+
+        <div class="container">
+            <label for="contractors">Contractors</label>
+            <ul>
+                {%  for item in bidrecord.contractors %}
+                    <li name="contractor{{ item.id }}">{{ item.name }}<br>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="container">
+            <label for="name">Cross-sell opportunity</label>
+            <p>{{ bidrecord.crosell }}</p>
+        </div>
+
+        <div class="container">
+            <label for="sel1">Estimated Value of Opportunity:</label>
+            <p>{{ bidrecord.appval }}</p>
+        </div>
+
+
+        <div class="container">
+            <label>Special/Complex Project</label>
+           <p>{{ bidrecord.specproj }}</p>
+        </div>
+
+        <div class="container">
+            <label for="comments">Comments:</label>
+            <textarea class="form-control" rows="5" id="comments" name="comments" disabled>{{ bidrecord.comments }}</textarea>
+        </div>
+
+
+
+
+    </form>
+
+{% endblock %}

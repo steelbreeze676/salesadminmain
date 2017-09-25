@@ -22,10 +22,12 @@
       <a class="navbar-brand" href="#">Gexpro</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Enter RFQ</a></li>
-      <li><a href="#">Table View</a></li>
-      <li><a href="#">View Calendar</a></li>
+        <li class="active"><a href="{{ url_for('rfq') }}">Enter RFQ</a></li>
+        <li><a href="{{ url_for('rfq_table') }}">Table View</a></li>
+        <li><a href="{{ url_for('rfq_calendar') }}">View Calendar</a></li>
+        <li><a href="{{ url_for('contractor_list') }}">Manage Contractors</a></li>
     </ul>
+
   </div>
 </nav>
 
@@ -34,6 +36,10 @@
 </head>
 
 <body>
+
+{% if current_user.is_authenticated %}
+    <h3>Hi {{ current_user.email }}!</h3>
+{% endif %}
 
 {% block content %}{% endblock %}
 
